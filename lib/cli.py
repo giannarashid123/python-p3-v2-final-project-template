@@ -1,28 +1,25 @@
-# lib/cli.py
-
 from helpers import (
-    exit_program,
-    helper_1
+    create_user,
+    login_user,
+    exit_program
 )
-
 
 def main():
     while True:
-        menu()
+        print("\nLanguage Learning CLI App")
+        print("1. Sign Up")
+        print("2. Log In")
+        print("3. Exit")
         choice = input("> ")
-        if choice == "0":
+
+        if choice == "1":
+            create_user()
+        elif choice == "2":
+            login_user()
+        elif choice == "3":
             exit_program()
-        elif choice == "1":
-            helper_1()
         else:
-            print("Invalid choice")
-
-
-def menu():
-    print("Please select an option:")
-    print("0. Exit the program")
-    print("1. Some useful function")
-
+            print("Invalid choice. Try again.")
 
 if __name__ == "__main__":
     main()
